@@ -1,9 +1,34 @@
-const getMovies = (req, res) => {
-  res.send('GET all movies');
+const Movie = require('../models/Movie');
+const moment = require('moment');
+
+// GET all movies
+const getMovies = async (req, res) => {
+  try {
+    const movies = await Movie.find();
+    res.json({ movies });
+  } catch (error) {
+    res.status(500).json({ message: error.message });
+  }
 };
 
-const addMovie = (req, res) => {
-  res.send('POST a movie');
+// POST a movie
+const addMovie = async (req, res) => {
+  const movie = new Movie({
+    title: req.body.title,
+    description: req.body.description,
+    releseDate: moment().format(req.body.releseDate),
+    director: req.body.director,
+    cast: req.body.cast,
+    poster: req.body.poster,
+    rating: req.body.rating,
+    genre: req.body.genre,
+  });
+  try {
+    const newMovie = await movie.save();
+    res.json({ newMovie });
+  } catch (error) {
+    res.status(400).json({ message: error.message });
+  }
 };
 
 const getMovie = (req, res) => {
