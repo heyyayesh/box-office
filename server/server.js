@@ -5,6 +5,7 @@ const cors = require('cors');
 const moviesRouter = require('./routes/moviesRouter');
 
 const app = express();
+app.use(cors());
 
 // Setup DB connection
 mongoose.connect(
