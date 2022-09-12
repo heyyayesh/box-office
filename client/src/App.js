@@ -1,11 +1,5 @@
-import Movies from './components/Movies';
-
 function App() {
-  return (
-    <div className='App'>
-      <Movies></Movies>
-    </div>
-  );
+  return <div className='App'></div>;
 }
 
 export default App;

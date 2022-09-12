@@ -27,6 +27,6 @@ app.use(express.urlencoded({ extended: false }));
 app.use('/movies', moviesRouter);
 
 // Start listining for server
-app.listen(5000, () => {
+app.listen(process.env.PORT, () => {
   console.log('server listening on port 5000');
 });
