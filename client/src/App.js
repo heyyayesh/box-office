@@ -1,5 +1,6 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Homepage from './components/Homepage';
+import Movies from './components/Movies';
 
 function App() {
   return (
@@ -7,6 +8,7 @@ function App() {
       <Router>
         <Routes>
           <Route path='/' element={<Homepage />} />
+          <Route path='/movies' element={<Movies />} />
         </Routes>
       </Router>
     </div>
