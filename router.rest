@@ -2,11 +2,21 @@ GET http://localhost:5000/movies/
 
 ###
 
+GET http://localhost:5000/movies/6318cfc50146139d0d649103
+
+###
+
 POST http://localhost:5000/movies/
 Content-Type: application/json
 
 {
-    "title": "Interstellar",
-    "description": "Interstellar is a 2014 epic science fiction film co-written, directed and produced by Christopher Nolan. It stars Matthew McConaughey, Anne Hathaway, Jessica Chastain, Bill Irwin, Ellen Burstyn, Matt Damon, and Michael Caine. Set in a dystopian future where humanity is struggling to survive, the film follows a group of astronauts who travel through a wormhole near Saturn in search of a new home for mankind.",
+    "title": "Your Name",
+    "description": "One of the best anime movies.",
     "releseDate": "10 19 2014"
 }
+
+###
+
+DELETE http://localhost:5000/movies/631f485276f7dd864294668d
+
+###

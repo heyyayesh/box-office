@@ -12,7 +12,6 @@ const MovieDetails = () => {
       const response = await fetch(`http://localhost:5000/movies/${id}`);
       const data = await response.json();
       setMovie(data);
-      console.log(data);
     };
 
     getMovie();
