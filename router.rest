@@ -10,13 +10,12 @@ POST http://localhost:5000/movies/
 Content-Type: application/json
 
 {
-    "title": "Your Name",
-    "description": "One of the best anime movies.",
-    "releseDate": "10 19 2014"
+    "title": "My Name",
+    "description": "One of the best anime movies."
 }
 
 ###
 
-DELETE http://localhost:5000/movies/631f485276f7dd864294668d
+DELETE http://localhost:5000/movies/632c9d4eaf2e2de4887fb921
 
 ###
