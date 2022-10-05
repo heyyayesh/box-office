@@ -1,6 +1,6 @@
 import React from 'react';
 import img from '../assets/interstellar.jpg';
-import { useNavigate, Link } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import { AiOutlineInfoCircle } from 'react-icons/ai';
 
 const Movie = ({ movie }) => {

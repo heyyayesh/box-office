@@ -1,6 +1,6 @@
 import React from 'react';
 import { useState, useEffect } from 'react';
-import { useParams } from 'react-router-dom';
+import { useParams, useNavigate } from 'react-router-dom';
 import poster from '../assets/interstellar.jpg';
 import { format } from 'date-fns';
 import { BsCalendarDate } from 'react-icons/bs';
@@ -11,6 +11,7 @@ import { AiOutlineDelete } from 'react-icons/ai';
 
 const MovieDetails = () => {
   const { id } = useParams();
+  const navigate = useNavigate();
 
   const [movie, setMovie] = useState(null);
 
@@ -23,6 +24,18 @@ const MovieDetails = () => {
 
     getMovie();
   }, []);
+
+  const handleMarkWatched = () => {
+    // To be implemented
+  };
+
+  const handleDelete = async () => {
+    const response = await fetch(`http://localhost:5000/movies/${id}`, {
+      method: 'DELETE',
+    });
+    const data = await response.json();
+    navigate('/movies');
+  };
 
   const GENRE = ['science fiction', 'drama', 'horror', 'thriller'];
   const CAST = [
@@ -111,11 +124,17 @@ const MovieDetails = () => {
       </section>
 
       <div className='flex justify-around mb-14 gap-4 p-4'>
-        <button className='bg-green-400 hover:bg-green-300 text-lg p-2 rounded-md flex-1 flex gap-2 items-center justify-center'>
+        <button
+          onClick={handleMarkWatched}
+          className='bg-green-400 hover:bg-green-300 text-lg p-2 rounded-md flex-1 flex gap-2 items-center justify-center'
+        >
           Mark Watched
           <IoMdDoneAll />
         </button>
-        <button className='bg-red-400 hover:bg-red-300 text-lg p-2 rounded-md flex-1 flex gap-2 items-center justify-center'>
+        <button
+          onClick={handleDelete}
+          className='bg-red-400 hover:bg-red-300 text-lg p-2 rounded-md flex-1 flex gap-2 items-center justify-center'
+        >
           Delete Movie
           <AiOutlineDelete />
         </button>

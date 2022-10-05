@@ -4,6 +4,7 @@ import Homepage from './components/Homepage';
 import MovieDetails from './components/MovieDetails';
 import Movies from './components/Movies';
 import Nav from './components/Nav';
+import AddMovie from './components/AddMovie';
 import { AiOutlineMenuUnfold } from 'react-icons/ai';
 
 function App() {
@@ -41,6 +42,7 @@ function App() {
           <Route path='/' element={<Homepage />} />
           <Route path='/movies' element={<Movies />} />
           <Route path='/movies/:id' element={<MovieDetails />} />
+          <Route path='/movies/add' element={<AddMovie />} />
         </Routes>
       </Router>
     </div>
