@@ -11,6 +11,7 @@ const MovieSchema = new Schema(
     poster: { type: String },
     rating: { type: Number, min: 1, max: 10 },
     genre: [String],
+    watched: { type: Boolean, default: false },
   },
   {
     timestamps: true,

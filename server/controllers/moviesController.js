@@ -31,6 +31,7 @@ const addMovie = async (req, res) => {
   }
 };
 
+// GET a single movie details
 const getMovie = async (req, res) => {
   try {
     const movie = await Movie.findById(req.params.id);
@@ -40,10 +41,12 @@ const getMovie = async (req, res) => {
   }
 };
 
+// UPDATE a movie
 const updateMovie = async (req, res) => {
   res.send('Not yet implemented.');
 };
 
+// DELETE a movie
 const deleteMovie = async (req, res) => {
   try {
     const movie = await Movie.findById(req.params.id);
