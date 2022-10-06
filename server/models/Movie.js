@@ -5,7 +5,7 @@ const MovieSchema = new Schema(
   {
     title: { type: String, required: true },
     description: { type: String, default: 'N/A' },
-    releseDate: { type: Date, default: new Date() },
+    releaseDate: { type: Date, default: new Date() },
     director: { type: String, default: 'N/A', required: true },
     cast: [String],
     poster: { type: String },

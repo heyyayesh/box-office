@@ -82,7 +82,7 @@ const MovieDetails = () => {
             <BsCalendarDate />
             <h2 className='font-medium'>Released on : </h2>
           </div>
-          <p>{format(new Date(movie.releseDate), 'dd-MM-yyyy')}</p>
+          <p>{format(new Date(movie.releaseDate), 'dd-MM-yyyy')}</p>
         </div>
 
         {/* Director */}

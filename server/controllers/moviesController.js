@@ -16,7 +16,7 @@ const addMovie = async (req, res) => {
   const movie = new Movie({
     title: req.body.title,
     description: req.body.description,
-    releseDate: moment().format(req.body.releseDate),
+    releaseDate: moment().format(req.body.releaseDate),
     director: req.body.director,
     cast: req.body.cast,
     poster: req.body.poster,
