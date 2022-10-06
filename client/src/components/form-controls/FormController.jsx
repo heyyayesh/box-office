@@ -1,5 +1,6 @@
 import React from 'react';
 import CheckboxGroup from './CheckboxGroup';
+import DatePicker from './DatePicker';
 import Input from './Input';
 import Textarea from './Textarea';
 
@@ -11,6 +12,8 @@ const FormController = ({ control, ...rest }) => {
       return <Textarea {...rest} />;
     case 'checkboxgroup':
       return <CheckboxGroup {...rest} />;
+    case 'datepicker':
+      return <DatePicker {...rest} />;
     default:
       return null;
   }

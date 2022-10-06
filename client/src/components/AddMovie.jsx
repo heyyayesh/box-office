@@ -27,6 +27,7 @@ const AddMovie = () => {
     director: '',
     description: '',
     genre: [],
+    releaseDate: null,
   };
 
   // Validation schema for form inputs
@@ -35,6 +36,7 @@ const AddMovie = () => {
     director: Yup.string().required('Required Field!'),
     description: Yup.string(),
     genre: Yup.array(),
+    releaseDate: Yup.date().required('Required Field!').nullable(),
   });
 
   // Submit handler for the form
@@ -52,24 +54,31 @@ const AddMovie = () => {
         onSubmit={onSubmit}
       >
         <Form className='flex flex-col gap-2'>
+          {/* Movie Title */}
           <FormController
             control='input'
             name='title'
             placeholder='Title of the Movie'
             label='Title'
           />
+
+          {/* Movie Director */}
           <FormController
             control='input'
             name='director'
             placeholder='Director'
             label='Director'
           />
+
+          {/* Movie Description */}
           <FormController
             control='textarea'
             name='description'
             placeholder='Description'
             label='Description'
           />
+
+          {/* Movie Genre(s) */}
           <FormController
             control='checkboxgroup'
             name='genre'
@@ -77,6 +86,15 @@ const AddMovie = () => {
             options={genreOptions}
           />
 
+          {/* Movie Release Date */}
+          <FormController
+            control='datepicker'
+            name='releaseDate'
+            placeholder='Release date'
+            label='Release Date'
+          />
+
+          {/* Submit Button */}
           <button
             type='submit'
             className='bg-blue-400 p-2 rounded-md text-white'
