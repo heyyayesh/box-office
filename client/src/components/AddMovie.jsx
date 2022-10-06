@@ -28,6 +28,7 @@ const AddMovie = () => {
     description: '',
     genre: [],
     releaseDate: null,
+    cast: [''],
   };
 
   // Validation schema for form inputs
@@ -92,6 +93,14 @@ const AddMovie = () => {
             name='releaseDate'
             placeholder='Release date'
             label='Release Date'
+          />
+
+          {/* Movie Cast */}
+          <FormController
+            control='dynamiclist'
+            name='cast'
+            placeholder='Cast'
+            label='Cast'
           />
 
           {/* Submit Button */}
