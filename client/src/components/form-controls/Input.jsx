@@ -1,9 +1,12 @@
 import React from 'react';
 import { Field, ErrorMessage } from 'formik';
 
-const FormField = ({ name, placeholder, ...rest }) => {
+const FormField = ({ name, label, placeholder, ...rest }) => {
   return (
     <div className='flex flex-col gap-2'>
+      <label className='font-semibold' htmlFor={name}>
+        {label}
+      </label>
       <Field
         id={name}
         name={name}
