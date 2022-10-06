@@ -4,17 +4,37 @@ import * as Yup from 'yup';
 import FormController from './form-controls/FormController';
 
 const AddMovie = () => {
+  // Genre Options
+  const genreOptions = [
+    { key: 'Action', value: 'action' },
+    { key: 'Crime', value: 'crime' },
+    { key: 'Drama', value: 'drama' },
+    { key: 'Fantasy', value: 'fantasy' },
+    { key: 'Horror', value: 'horror' },
+    { key: 'Comedy', value: 'comedy' },
+    { key: 'Romance', value: 'romance' },
+    { key: 'Science Fiction', value: 'sci-fi' },
+    { key: 'Sports', value: 'sports' },
+    { key: 'Thriller', value: 'thriller' },
+    { key: 'Mystery', value: 'mystery' },
+    { key: 'War', value: 'war' },
+    { key: 'Western', value: 'western' },
+  ];
+
   // Initial values for the form inputs
   const initialValues = {
     title: '',
     director: '',
     description: '',
+    genre: [],
   };
 
   // Validation schema for form inputs
   const validationSchema = Yup.object({
     title: Yup.string().required('Required Field!'),
     director: Yup.string().required('Required Field!'),
+    description: Yup.string(),
+    genre: Yup.array(),
   });
 
   // Submit handler for the form
@@ -24,7 +44,7 @@ const AddMovie = () => {
 
   return (
     <div className='p-4'>
-      <h1 className='text-2xl text-center mb-20 mt-2'>Add a New Movie</h1>
+      <h1 className='text-2xl text-center mb-10 mt-2'>Add a New Movie</h1>
 
       <Formik
         initialValues={initialValues}
@@ -36,16 +56,25 @@ const AddMovie = () => {
             control='input'
             name='title'
             placeholder='Title of the Movie'
+            label='Title'
           />
           <FormController
             control='input'
             name='director'
             placeholder='Director'
+            label='Director'
           />
           <FormController
             control='textarea'
             name='description'
             placeholder='Description'
+            label='Description'
+          />
+          <FormController
+            control='checkboxgroup'
+            name='genre'
+            label='Genre (Select all that apply)'
+            options={genreOptions}
           />
 
           <button
