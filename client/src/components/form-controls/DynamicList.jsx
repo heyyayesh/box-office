@@ -3,7 +3,7 @@ import { Field, FieldArray } from 'formik';
 
 const DynamicList = ({ name, label, placeholder, ...rest }) => {
   return (
-    <div className='flex flex-col gap-2 border border-gray-400 rounded-md p-2'>
+    <div className='flex flex-col gap-2 rounded-md'>
       <label className='font-semibold' htmlFor={name}>
         {label}
       </label>
