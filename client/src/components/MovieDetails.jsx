@@ -23,17 +23,17 @@ const MovieDetails = () => {
     };
 
     getMovie();
-  }, []);
+  }, [id]);
 
   const handleMarkWatched = () => {
     // To be implemented
   };
 
   const handleDelete = async () => {
-    const response = await fetch(`http://localhost:5000/movies/${id}`, {
+    await fetch(`http://localhost:5000/movies/${id}`, {
       method: 'DELETE',
     });
-    const data = await response.json();
+    // const data = await response.json();
     navigate('/movies');
   };
 
