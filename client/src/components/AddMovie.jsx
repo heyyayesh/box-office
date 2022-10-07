@@ -29,6 +29,7 @@ const AddMovie = () => {
     genre: [],
     releaseDate: null,
     cast: [''],
+    rating: '',
   };
 
   // Validation schema for form inputs
@@ -38,6 +39,10 @@ const AddMovie = () => {
     description: Yup.string(),
     genre: Yup.array(),
     releaseDate: Yup.date().required('Required Field!').nullable(),
+    rating: Yup.number()
+      .required('Required Field!')
+      .min(1, 'Minimum possible rating is 1')
+      .max(10, 'Maximum possible rating 10'),
   });
 
   // Submit handler for the form
@@ -101,6 +106,14 @@ const AddMovie = () => {
             name='cast'
             placeholder='Cast'
             label='Cast (Add one by one)'
+          />
+
+          {/* Movie Rating */}
+          <FormController
+            control='number'
+            name='rating'
+            label='Rating (1-10)'
+            placeholder='6.9'
           />
 
           {/* Submit Button */}

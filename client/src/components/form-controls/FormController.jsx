@@ -17,6 +17,8 @@ const FormController = ({ control, ...rest }) => {
       return <DatePicker {...rest} />;
     case 'dynamiclist':
       return <DynamicList {...rest} />;
+    case 'number':
+      return <Input type='number' {...rest} />;
     default:
       return null;
   }
